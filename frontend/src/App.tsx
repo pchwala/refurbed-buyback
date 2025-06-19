@@ -1,20 +1,20 @@
-import Alert from "./components/Alert";
-import Button from "./components/Button";
-import { useState } from "react";
+import Button from "@mui/material/Button";
+import { Grid, Paper } from "@mui/material";
 
 function App() {
-  const [showAlert, setShowAlert] = useState(true);
-
-  const handleButtonClick = () => {
-    setShowAlert(true);
-  };
-
-  let text = "Klikaj se";
-
   return (
     <div>
-      <Button onClick={handleButtonClick}>{text}</Button>
-      {showAlert && <Alert onClose={() => setShowAlert(false)}>testowy</Alert>}
+      <Grid container spacing={2}>
+        <Grid size={12}>
+          <Paper>nav</Paper>
+        </Grid>
+        <Grid size={2}>
+          <Paper>side</Paper>
+        </Grid>
+        <Grid size={10} height={"100vh"}>
+          <Paper>main</Paper>
+        </Grid>
+      </Grid>
     </div>
   );
 }
